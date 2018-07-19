@@ -38,7 +38,9 @@
 			this.dom = document.querySelector(dom)
 		}else if(isDom(dom)){
 			this.dom = dom
-		}
+		}else {
+ 			throw new Error('The first parameter should be a string or dom element!')
+ 		}
 
 		//创建遮罩容器及其图片,及其设置样式
 		var oDiv = document.createElement('div');
