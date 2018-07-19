@@ -16,13 +16,22 @@
  					return  (obj && typeof obj == 'object' && obj.nodeType == 1 && typeof obj.nodeName == 'string')
  				}
 
+ 			/*
+				@dom:       被点击的目标元素
+				@options:   传入参数
+					@src :      传入图片的地址
+					@imgStyle: 	图片的附加样式
+					@divStyle:  外层容器的额外样式
+					@open():  	打开图片后的回调函数
+					@close():   关闭图片后的回调函数
+ 			*/
  		var MaskShare = function (dom, options) {
  			//判断是否是由new操作符生成对象
  			if (!(this instanceof MaskShare)) return new MaskShare(dom, options)
  			//参数合并
  			this.options = this.extend({
  				//默认参数
- 			}, options)
+ 			}, options);
 
  			//判断参数dom的值是字符串还是dom对象
  			if (typeof dom == 'string') {
@@ -36,7 +45,7 @@
  			var oImg = document.createElement('img');
  			oDiv.style.cssText = "display: none;position: absolute;left: 0;top: 0;width: 100%;height:100%;background-color: rgba(0,0,0,0.8);z-index:9999;";
  			oImg.style.cssText ="margin-top:20px;width: 100%;";
- 			
+
  			//外部扩张样式
  			if(this.options.divStyle){
  				this.setStyle(oDiv, this.options.divStyle)
