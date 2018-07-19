@@ -50,19 +50,18 @@
 		if(this.options.divStyle){
 			this.setStyle(oDiv, this.options.divStyle)
 		}
-	if(this.options.imgStyle){
-	 	this.setStyle(oImg, this.options.imgStyle)
-	}
-	oImg.src = this.options.src
-	oDiv.appendChild(oImg)
-	this.oDiv = oDiv
-	//调用初始化样式
-		this.init();
+		if(this.options.imgStyle){
+		 	this.setStyle(oImg, this.options.imgStyle)
+		}
 
+		oImg.src = this.options.src
+		oDiv.appendChild(oImg)
+		this.oDiv = oDiv
+		//调用初始化样式
+		this.init();
 	}
 
 	MaskShare.prototype = {
-
 		//初始化
 		init () {
 			this.event()
@@ -91,17 +90,14 @@
 			this.dom.addEventListener('click', function(){
 				document.body.appendChild(_this.oDiv)
 				_this.oDiv.style.display = 'block';
-
 				_this.options.open && _this.options.open()
 			}, false)
 
 			//关闭遮罩
 			this.oDiv.addEventListener('click', function(){
 				_this.oDiv.style.display = 'none';
-
 				_this.options.close && _this.options.close()
 			}, false)
-
 		}
 	}
 
