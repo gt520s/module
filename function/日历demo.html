@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>calender</title>
+  <style>
+    .ui-date-picker {
+      position: absolute;
+      width: 240px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      font-family: serif, cursive, fantasy
+    }
+    .ui-date-picker > .header {
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background-color: #4385F5;
+      color: #fff;
+    }
+    .ui-date-picker .caret-left {
+      display: block;
+      float: left;
+      margin-left: 10px;
+      margin-top: 6px;
+      border-right: 7px solid #fff;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+    }
+    .ui-date-picker .caret-right {
+      display: block;
+      float: right;
+      margin-right: 10px;
+      margin-top: 6px;
+      border-left: 7px solid #fff;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+    }
+    .ui-date-picker .panel {
+      width: 100%;
+      text-align: center;
+      background-color: #fff;
+      border-collapse: collapse;
+    }
+    .ui-date-picker .panel th {
+      line-height: 2;
+    }
+    .ui-date-picker .panel tr {
+      border-top: 1px solid #eee;
+    }
+    .ui-date-picker .panel tr:last-child {
+      padding-bottom: 10px;
+    }
+    .ui-date-picker .panel td {
+      line-height: 1.4
+    }
+    .ui-date-picker .pre-month,
+    .ui-date-picker .next-month {
+      color: #eee;
+    }
+    .ui-date-picker .cur-month {
+      cursor: pointer;
+    }
+    .ui-date-picker .cur-month:hover {
+      background-color: #ccc;
+      color: #fff;
+    }
+    .ui-date-picker .cur-date {
+      font-weight: bold;
+      color: #4385F5;
+    } 
+		
+		.box{
+			margin: 200px auto;
+			width: 450px;
+			font-size: 0;
+		}
+		.box input{
+			width: 200px;
+			height: 30px;
+			text-indent: 10px;
+		}
+		.right{float: right;}
+  </style>
+</head>
+<body>
+	<div class="box">
+		<input class="date-input left" type="text" placeholder="有初始值" data-init="2016/05/31" />
+  	<input class="date-input right" type="text" placeholder="无初始值" />
+	</div>
+  
+  <script src="jquery-1.8.3.js"></script>
+  <script src="date.js"></script>
+  <script>
+    
+    $(".date-input").DatePicker();
+  </script>
+</body>
+</html>
